@@ -1,0 +1,8 @@
+- name: Me
+  link: /
+- name: Portfolio
+  link: /about/
+- name: Giving Back
+  link: /service/
+- name: Blog
+  link: /blog/

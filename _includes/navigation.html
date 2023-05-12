@@ -1,0 +1,6 @@
+<nav class = "navbar navbar-expand-sm justify-content-center">
+    {% for item in site.data.nav %}
+    <a class="nav-link" href="{{ item.link }}"> {{ item.name }}</a>
+    {% endfor %}
+    <a class="nav-link" href="/assets/files/resume.pdf" target= "_blank"> Resume</a>
+</nav>

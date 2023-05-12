@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href = "/assets/css/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+        <title>High Speed Traffic Enforcement Camera - Susindhar Arumugapriya Venkatesan</title>
+    </head>
+    <body>
+        <nav class = "navbar navbar-expand-sm justify-content-center">
+    
+    <a class="nav-link" href="/"> Me</a>
+    
+    <a class="nav-link" href="/about/"> Portfolio</a>
+    
+    <a class="nav-link" href="/service/"> Giving Back</a>
+    
+    <a class="nav-link" href="/blog/"> Blog</a>
+    
+    <a class="nav-link" href="/assets/files/resume.pdf" target= "_blank"> Resume</a>
+</nav>
+        <div class="container">
+            <br><br>
+<div class = "row">
+    <div class="col-12 col-sm-8 offset-sm-2">
+        <h3>High Speed Traffic Enforcement Camera</h3>
+        <br>
+        <p><p>It was in the Winter Semester, 2021-22 when we were introduced to the course, Microprocessors. I had a relatively proper understanding of the Computer Architecture, and my professor re-iterated that this course would help us understand computers deeper, and that there is a world beyond the desktops and laptops that accompanies us in our lives, in the form of embedded computers. It was at a time when the weather was hardly winter-like, and when I happened to stumble on to a news article reporting that deaths due to traffic accidents was at an all-time high.
+<br /><br /></p>
+
+<h4 id="goal-of-the-project">Goal of the Project</h4>
+<p><br /></p>
+
+<p>The goal of the project is to determine the speed of a vehicle by using the time elapsed and distance travelled from the starting point to the end point. The architecture of the proposed solution contains 4 stages:</p>
+
+<ul>
+  <li>Detection of the vehicle</li>
+  <li>Track the vehicle and obtain the speed of the image</li>
+  <li>Obtain image captures of the number plate of the vehicles over speed limit.</li>
+  <li>Processing of the images captured.</li>
+</ul>
+
+<p>The start and the end coordinates are initially set. Then a video of the moving vehicle is obtained using the CCTV camera setup. The distance between the start and the end point is approximated. This will be used as the distance for estimating the speed in the speed calculation stage. The video frames are collected and processed. Using the video frames, image frames would be extracted using an appropriate software. These images generated would then be enhanced again and processed.
+<br /><br /></p>
+
+<h4 id="system-architecture">System Architecture</h4>
+<p><br /></p>
+
+<p>The architecture consists of the following:</p>
+
+<ol>
+  <li><strong>Camera setup:</strong> Two CCTV cameras are set up at a distance from each other to cover the area of interest.</li>
+  <li><strong>Object detection:</strong> Each camera captures video footage and feeds it into an object detection system. The system identifies objects within the video frames and extracts features such as position, size, and orientation.</li>
+  <li><strong>Object tracking:</strong> The object detection system tracks the identified objects over time and records their positions at different time intervals. To track the objects across cameras, we can use a multi-camera tracking algorithm that fuses the data from both cameras and produces a single track for each object.</li>
+  <li><strong>Speed calculation:</strong> Once we have the positions of the objects at different time intervals, we can calculate their speed by dividing the distance they covered by the time elapsed between the two intervals.</li>
+  <li><strong>Output visualization:</strong> The speed data can be displayed in a graphical format that shows the speed of each object over time.</li>
+  <li><strong>Alert system:</strong> An alert system can be set up to notify the user when the speed of an object exceeds a predefined threshold. This can be useful in scenarios where speeding vehicles or objects pose a safety risk.</li>
+</ol>
+
+<p>To implement this architecture, we can use a combination of computer vision and ma1 chine learning techniques such as object detection, tracking, and multicamera fusion. Open-source libraries such as OpenCV, TensorFlow, and PyTorch can be used to develop the object detection and tracking systems. The output data can be stored in a database or cloud storage for further analysis or visualization.</p>
+
+<p><br /></p>
+<figure style="display: block; margin-left: auto; margin-right: auto; width: 70%; text-align: justify; font-size: 80%">
+<img src="/assets/img/high-speed-camera-architecture.png" alt="Robert Waterson" width="100%" />
+<figcaption><i>Architecture Diagram of the camera system.</i></figcaption>
+</figure>
+<p><br /></p>
+
+<h4 id="implementation">Implementation</h4>
+<p><br /></p>
+
+<p>The developed CCTV was tested in a simulated environment. We have conducted extensive testing in simulated environments to evaluate the accuracy and efficiency of the system. The system was able to detect the speed of a dummy vehicle and also capture the name plate accurately. All this was done using by CCTV systems, so our research also shows that this system can easily be integrated to existing CCTV cameras on roads, thus making it a cost-effective solution for improving road safety and traffic management.</p>
+
+<p><br /></p>
+<figure style="display: block; margin-left: auto; margin-right: auto; width: 70%; text-align: justify; font-size: 80%">
+<img src="/assets/img/high-speed-camera-testing-1.png" alt="Camera testing" width="100%" />
+</figure>
+<p><br /></p>
+
+<p>We then used Haar Cascade, a popular object detection algorithm based on Haar Wavelets, to isolate the vehicles in these high definiton images captured and mark them.</p>
+
+<p><br /></p>
+<figure style="display: block; margin-left: auto; margin-right: auto; width: 70%; text-align: justify; font-size: 80%">
+<img src="/assets/img/high-speed-camera-testing-2.png" alt="Camera testing with Haar Wavelet" width="100%" />
+</figure>
+<p><br /></p>
+
+<p>We were able to recognize the license plates of the vehicle using text recognition packages on python, like pytesseract to extract license plates in text. For this to work, we enhanced the image to detect both printed/handwritten text.</p>
+
+<p><br /></p>
+<figure style="display: block; margin-left: auto; margin-right: auto; width: 70%; text-align: justify; font-size: 80%">
+<img src="/assets/img/high-speed-camera-testing-5.png" alt="Camera testing with Haar Wavelet" width="100%" />
+<figcaption><i>Edge detection to identify irregular fonts of text in license plates.</i></figcaption>
+</figure>
+<p><br /></p>
+
+<p>The readings calculated are updated in a log, to maintain the history of unique vehicles crossing an area.</p>
+
+<p><br /></p>
+<figure style="display: block; margin-left: auto; margin-right: auto; width: 70%; text-align: justify; font-size: 80%">
+<img src="/assets/img/high-speed-camera-testing-3.png" alt="Log records" width="100%" />
+</figure>
+<p><br /></p>
+
+<p><br /></p>
+<figure style="display: block; margin-left: auto; margin-right: auto; width: 70%; text-align: justify; font-size: 80%">
+<img src="/assets/img/high-speed-camera-testing-4.png" alt="Camera testing with Haar Wavelet" width="100%" />
+</figure>
+<p><br /></p>
+
+<h4 id="conclusion-and-final-remarks">Conclusion and Final Remarks</h4>
+<p><br /></p>
+
+<p>The system is designed to automatically detect speeding vehicles and record their license plate numbers, without the need for human intervention. The system uses advanced image processing algorithms and machine learning techniques to accurately identify vehicles exceeding the speed limit, making it highly efficient and effective in reducing accidents caused by over-speeding. The high-speed traffic enforcement camera system has several benefits, including serving as a deterrent for drivers who may otherwise speed, providing evidence for law enforcement to take action against dangerous drivers, and collecting valuable data on traffic flow and speed patterns that can be used to optimize traffic management, reduce congestion, and make driving more efficient.</p>
+
+<p>This was an insightful experience for me (and my project partner) to explore interfacing of different devices, and overall creating a hardware setup. We faced numerous challenges, logistic and logical errors in the process, but overcoming that was more enlightening for us as students. Shoutout to Shruthi S, my best friend and partner for this project, for being the best teammate! :D</p>
+
+<p><br /></p>
+</p>
+    </div>
+<br><br><br><br>
+</div>
+            <div class = "col-12 col-sm-6 offset-sm-3 d-flex justify-content-center">
+                 <a href="mailto:susindhar02@gmail.com" id="_email_link"><i class="fa fa-envelope fa-lg"></i></a>  
+<a href="https://www.linkedin.com/in/susindhar"><i class="fa fab fa-linkedin fa-lg"></i></a>   
+<a href="https://github.com/susindhar21"><i class="fa fa-github fa-lg"></i></a>
+            </div>
+            <br>
+        </div>
+        <br>
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.jsSS"></script>
+        <script src="/assets/js/about.js"></script>
+    </body>
+</html>
