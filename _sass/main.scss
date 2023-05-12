@@ -30,9 +30,6 @@ html, body{
     width: 93%;
 }
 }
-nav{
-    /*background-color: #f1f2f6;*/
-}
 .row-header{
     margin:0px auto;
     padding: 0px auto;
@@ -58,9 +55,6 @@ nav{
     font-size: 80%;
     margin: 0px;
     color: #0f0f0f;
-}
-.navbar {
-    /*background-color: #f1f2f6;*/
 }
 .nav-link {
     align-content: right;
@@ -90,6 +84,7 @@ p {
 #quote {
     background: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%);
     -webkit-background-clip: text;
+    background-clip: text;
 	-webkit-text-fill-color: transparent;
     font-weight: 600;
 }
