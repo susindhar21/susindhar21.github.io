@@ -8,8 +8,6 @@ html, body { /*background-color: #f1f2f6;*/ /*background-color: #d8cdfd;*/ backg
 /* Smartphones (portrait) ----------- */
 @media (max-width: 320px) { .container { background-color: white; border-radius: 12px; width: 93%; } }
 
-nav { /*background-color: #f1f2f6;*/ }
-
 .row-header { margin: 0px auto; padding: 0px auto; }
 
 .row-content { margin: 0px auto; padding: 50px 0px 50px 0px; border-bottom: 1px ridge; min-height: 400px; }
@@ -19,8 +17,6 @@ nav { /*background-color: #f1f2f6;*/ }
 .jumbotron { padding: 70px 30px 70px 30px; margin: 0px auto; background: #ffffff; }
 
 .address { font-size: 80%; margin: 0px; color: #0f0f0f; }
-
-.navbar { /*background-color: #f1f2f6;*/ }
 
 .nav-link { align-content: right; color: rgba(0, 0, 0, 0.479); }
 
@@ -36,7 +32,7 @@ p { font-size: 100%; color: #252525bb; text-align: justify; }
 
 #home { color: black; font-weight: 600; }
 
-#quote { background: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
+#quote { background: linear-gradient(319deg, #663dff 0%, #aa00ff 37%, #cc4499 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
 
 .contacts { word-spacing: 5px; }
 
